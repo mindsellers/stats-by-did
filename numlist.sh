@@ -22,6 +22,7 @@ sql="SELECT did, COUNT(*) AS call_count
      WHERE calldate BETWEEN '$START_DATE' AND '$END_DATE'
        AND did IN ($numbers)
      AND disposition='ANSWERED'
+     AND lastapp !='Playback'
      GROUP BY did
      ORDER BY did;"
 
